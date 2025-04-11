@@ -15,7 +15,10 @@ When working in software, everything we do falls into this category. Even your A
 
 Not all software falls into the category of apparent-determinism. The manner in which we write our code and the tools we use to do so determine whether our software will behave in this manner. 
 
-Is your code deterministic? How sure are you? Can you *prove* it? (HINT - This cannot be proven with unit tests. Unit tests can prove that a specific input will provide a specific output under specific circumstances, but unless you want to provide a unit test for every possible input in all possible conditions, a proof by "transitive" properties is required. This type of proof can only be rationally applied to code that is *deterministic*)
+### Relevance in software
+Systems that allow for non-determistic code can cause devasting consequences. Bugs produced in this manner are some of the hardest to trace. Dependable systems rely on a rational and trasactional state exchange. STATE_BEFORE_CHANGE => change(state) => STATE_AFTER_CHANGE.
+
+Is your code deterministic? How sure are you? Can you *prove* it? (HINT - This cannot be proven with unit tests. Unit tests can prove that a specific input will provide a specific output under specific circumstances, but unless you want to provide a unit test for every possible input in all possible conditions, a proof by "transitive" properties is required. This type of proof can only be rationally applied to *deterministic* systems)
 
 **Example of non-deterministic code in JS**
 ```js
@@ -47,4 +50,23 @@ Main();
 ```
 *In this example the combination of a "reference" and a "race condition" create a function whose ouput is altered by external code.*
 
-In Functional Programming, external influences like this are referred to as "Side Effects". Most Object Oriented Programming languages and many Functional Programming languages allow for non-determistic code, but Functional Programming languages often include mechanisms to discourage or restrict these "side-effects". The degree to which they've done so can be called "Functional Purity". 
+In Functional Programming, external or out-of-scope influences like this are referred to as "Side Effects". Most Object Oriented Programming languages and many Functional Programming languages allow for non-determistic code, but Functional Programming languages often include mechanisms to discourage or restrict these "side-effects". The degree to which they've done so can be called "Functional Purity". 
+
+In systems with high "functional purity" we can use mathematical proofs to verify outcomes. This process is called "Formal Verification". This technique has been used by companies since the early 90's but has been fairly contained in usage do to the complexity, cost, and effort involved. But this could change in the future as we brace for the possibility of AI taking over this task. 
+
+If you want to see an example of this, or, if you want to better understand the relationship between mathematics and your software, I highly recommend the interactive book series [Software Foundations](https://softwarefoundations.cis.upenn.edu/) by Benjamin Pierce. Download the [ROCQ IDE](https://rocq-prover.org/) and create an entire programming language from scratch, using mathematical proofs.
+
+### Determinism in React/Redux (front end libraries)
+React/Redux are javascript libraries. As such they can not be classified as Functional Programming. Never-the-less, they borrow functional techniques to create a functional system at the core of your application.
+
+In React, UI components are expressed as functions. They receive an input and render html using that input. That render remains cached until a new input is provided for the component, triggering a new render output. This creates a deterministic system for *rendering* data.
+
+In Redux, application state is saved in a central store. Formal getter and setter functions are provided to interact with the store. These formal functions automatically sever references and protect the centralized state so that if you were to write the SideEffectFn shown above into your code, the side effect would not apply to the state tree. 
+
+The combination of these aspects creates our functionally pure transaction: STATE => change(state) => STATE.
+
+There are many powerful impacts that this has on our system. Using a browser extension, we can not only see the present state, view the history of state changes, or alter any aspect of the state. This makes tracing and debugging your front end easy and rational.
+
+### Determinism in Elixir/Phoenix
+
+Billed as a Functional Programming language, determinism is central to Elixir. Elixir is designed around principles that naturally promote predictable behavior — immutability, referential transparency, and process isolation. While it remains highly accessible and practical for business applications, its concurrency model (built on the BEAM VM) avoids the typical pitfalls of shared state and race conditions. In Elixir, writing deterministic code isn’t a best practice you have to enforce — it’s the default behavior, and breaking that determinism usually requires intentional effort.
