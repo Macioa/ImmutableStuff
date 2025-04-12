@@ -2,21 +2,24 @@
 ## (and their relevance in software)
 
 ### What is determinism?
-The term "deterministic" applies to any process that, when given the exact same conditions, yields the exact same result. The concept is very relevant in the following areas:
+The term "[deterministic](https://en.wikipedia.org/wiki/Deterministic_system)" applies to any process that, when given the exact same conditions, yields the exact same result. The concept is very relevant in the following areas:
 * Mathematics/Physics
 * Engineering
 * Computer Science
+* Philosophy
 * Time travel science fiction
 
-When working in software, everything we do falls into this category. Even your AI chatbot, which could potentially respond with a different answer when asked the same question, is still classified as deterministic. If you were to use the exact same code, trained exactly the way, with exactly the same prompts, it would provide the same result. A deterministic process whose output changes based on the order of inputs is called "non-commutative".
+When working in software, everything we do falls into this category. Even your AI chatbot, which could potentially respond with a different answer when asked the same question, is still classified as deterministic. If you were to use the exact same code, trained exactly the way, with exactly the same prompts, it would provide the same result. A deterministic process whose output changes based on the order of inputs is called "[non-commutative](https://en.wikipedia.org/wiki/Noncommutative_property)".
 
 ### What is apparent determinism?
-"Apparent determinism", or "epistemic determinism," is a relative term that applies to any process that, when given the exact same conditions, yields the exact same result **within reason**. The best example of this type of determinism would be in dice. Dice are generally used as random number generators, yet their behavior is driven solely by the deterministic laws of Newtonian physics. The apparent randomness is a result of what is commonly referred to "the butterfly effect", in which a minor deviation propogates a much larger deviation. Therefore, dice can be classified as both "deterministic" and "apparently non-deterministic"
+"Apparent determinism" is a relative term that applies to any process that, when given the exact same conditions, yields the exact same result **within reason**. The best example of this type of determinism would be in dice. Dice are generally used as random number generators, yet their behavior is driven solely by the deterministic laws of Newtonian physics. The apparent randomness is a result of what is commonly referred to "[the butterfly effect](https://en.wikipedia.org/wiki/Butterfly_effect)", in which a minor deviation propagates a much larger deviation. Therefore, dice can be classified as both "[deterministic](https://en.wikipedia.org/wiki/Deterministic_system)" and "apparently non-deterministic"
 
-Not all software falls into the category of apparent-determinism. The manner in which we write our code and the tools we use to do so determine whether our software will behave in this manner. 
+Not all software falls into the category of apparent-determinism. The manner in which we write our code and the tools we use to do so determine whether our software will behave in a predictable manner. 
 
 ### Relevance in software
-Systems that allow for non-determistic code can cause devasting consequences. Bugs produced in this manner are some of the hardest to trace. Dependable systems rely on a rational and trasactional state exchange. STATE_BEFORE_CHANGE => change(state) => STATE_AFTER_CHANGE.
+Systems that permit non-deterministic code can lead to severe and unpredictable failures. Bugs produced in this manner are some of the hardest to trace. Dependable systems rely on a rational and transactional state exchange. 
+
+LAST_STATE => change(state) => NEW_STATE
 
 Is your code deterministic? How sure are you? Can you *prove* it? (HINT - This cannot be proven with unit tests. Unit tests can prove that a specific input will provide a specific output under specific circumstances, but unless you want to provide a unit test for every possible input in all possible conditions, a proof by "transitive" properties is required. This type of proof can only be rationally applied to *deterministic* systems)
 
@@ -48,22 +51,24 @@ const Main = async () => {
 
 Main();
 ```
-*In this example the combination of a "reference" and a "race condition" create a function whose ouput is altered by external code.*
+*In this example the combination of a "[reference](https://en.wikipedia.org/wiki/Reference_(computer_science))" and a "[race condition](https://en.wikipedia.org/wiki/Race_condition)" create a function whose output is altered by external code.*
 
-In Functional Programming, external or out-of-scope influences like this are referred to as "Side Effects". Most Object Oriented Programming languages and many Functional Programming languages allow for non-determistic code, but Functional Programming languages often include mechanisms to discourage or restrict these "side-effects". The degree to which they've done so can be called "Functional Purity". 
+In Functional Programming, external or out-of-scope influences like this are referred to as "[side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))". Most Object Oriented Programming languages and many Functional Programming languages allow for non-deterministic code, but Functional Programming languages often include mechanisms to discourage or restrict these "[side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science))". The degree to which they've done so can be called "[functional purity](https://en.wikipedia.org/wiki/Pure_function)". 
 
-In systems with high "functional purity" we can use mathematical proofs to verify outcomes. This process is called "Formal Verification". This technique has been used by companies since the early 90's but has been fairly contained in usage do to the complexity, cost, and effort involved. But this could change in the future as we brace for the possibility of AI taking over this task. 
+In systems with high "[functional purity](https://en.wikipedia.org/wiki/Pure_function)" we can use mathematical proofs to verify outcomes. This process is called "[formal verification](https://en.wikipedia.org/wiki/Formal_verification)". This technique has been used by companies since the early 90's but has been fairly contained in usage due to the complexity, cost, and effort involved. But this could change in the future as we brace for the possibility of AI taking over this task. 
 
-If you want to see an example of this, or, if you want to better understand the relationship between mathematics and your software, I highly recommend the interactive book series [Software Foundations](https://softwarefoundations.cis.upenn.edu/) by Benjamin Pierce. Download the [ROCQ IDE](https://rocq-prover.org/) and create an entire programming language from scratch, using mathematical proofs.
+If you want to see an example of this, or, if you want to better understand the relationship between mathematics and your software, I highly recommend the interactive book series [Software Foundations](https://softwarefoundations.cis.upenn.edu/) by [Benjamin Pierce](https://www.cis.upenn.edu/~bcpierce/). Download the [ROCQ IDE](https://rocq-prover.org/) and create an entire programming language from scratch, using mathematical proofs.
 
 ### Determinism in React/Redux (front end libraries)
-React/Redux are javascript libraries. As such they can not be classified as Functional Programming. Never-the-less, they borrow functional techniques to create a functional system at the core of your application.
+React and Redux are implemented in JavaScript, a multi-paradigm language, so they are not purely functional by nature.
 
-In React, UI components are expressed as functions. They receive an input and render html using that input. That render remains cached until a new input is provided for the component, triggering a new render output. This creates a deterministic system for *rendering* data.
+In React, UI components are expressed as functions. They receive an input and render html using that input. React functions re-execute when their inputs change, producing a new output; otherwise, the previous output is reused, ensuring consistent rendering behavior based on input. This creates a deterministic system for *rendering* data.
 
-In Redux, application state is saved in a central store. Formal getter and setter functions are provided to interact with the store. These formal functions automatically sever references and protect the centralized state so that if you were to write the SideEffectFn shown above into your code, the side effect would not apply to the state tree. 
+In Redux, application state is saved in a central store. Formal getter and setter functions are provided to interact with the store. These formal functions automatically sever references and protect the centralized state so that if you were to write the SideEffectFn shown above into your code, the side effect would not apply to the state tree. This functional pattern enforces immutability by design, ensures predictability, eliminates unintended side effects, and makes state transitions explicit, traceable, and testable.
 
-The combination of these aspects creates our functionally pure transaction: STATE => change(state) => STATE.
+The combination of these aspects creates our functionally pure transaction: 
+
+LAST_STATE => change(state) => NEW_STATE.
 
 There are many powerful impacts that this has on our system. Using a browser extension, we can not only see the present state, view the history of state changes, or alter any aspect of the state. This makes tracing and debugging your front end easy and rational.
 
