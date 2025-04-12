@@ -24,6 +24,8 @@ When working in software, everything we do falls into this category. Even your A
 
 Not all software falls into the category of apparent-determinism. The manner in which we write our code and the tools we use to do so determine whether our software will behave in a predictable manner.
 
+For brevity, the rest of this article will refer to this 'apparently determistic' behavior as 'determistic'.
+
 ---
 
 ### **Relevance in software**
@@ -43,28 +45,29 @@ _Is your code deterministic? How sure are you? Can you **prove** it?_
 
 ```js
 // Create object to use as reference
-const myMap = { value: 1 };
-
-const SideEffectFn = (map) => {
-  map.value += 1;
-  return map.value;
+const myReferenceObject = { value: 1 };
+// This function can alter external or out-of-scope behavior
+const SideEffectFn = (reference) => {
+  reference.value += 1;
+  return reference.value;
 };
-const MyFn = async (map) => {
+// Our non-deterministic function
+const MyFn = async (reference) => {
   // delay 1 millisecond
   await new Promise((resolve) => setTimeout(resolve, 1));
   // execute after 1 millisecond
-  map.value += 1;
-  return map;
+  reference.value += 1;
+  return reference.value;
 };
 
 const Main = async () => {
-  // MyFn(myMap) is called twice with the same input but yields different behavior
-  const R1 = MyFn(myMap);
+  // MyFn(myReferenceObject) is called twice with the same input but yields different behavior
+  const R1 = MyFn(myReferenceObject);
   console.log(await R1);
   // (1 + 1) = 2
 
-  const R2 = MyFn(myMap);
-  SideEffectFn(myMap);
+  const R2 = MyFn(myReferenceObject);
+  SideEffectFn(myReferenceObject);
   console.log(await R2);
   // (2 + 1) = 4      !?!?!?
 };
@@ -98,6 +101,8 @@ There are many powerful impacts that this has on our system. Using a browser ext
 
 ---
 
-### **Determinism in [Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>)/Phoenix (back end)**
+### **Determinism in [Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>) / [Phoenix](https://en.wikipedia.org/wiki/Phoenix_(web_framework)) (back end)**
 
 Billed as a [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming) language, determinism is central to **[Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>)**. [Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>) is designed around principles that naturally promote predictable behavior — **immutability**, **referential transparency**, and **process isolation**. While it remains highly accessible and practical for business applications, its concurrency model (built on the **BEAM VM**) avoids the typical pitfalls of shared state and race conditions. In [Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>), writing deterministic code isn’t a best practice you have to enforce — it’s the default behavior, and breaking that determinism usually requires intentional effort.
+
+While [Elixir](<https://en.wikipedia.org/wiki/Elixir_(programming_language)>) establishes determinism at the language level, [Phoenix](https://en.wikipedia.org/wiki/Phoenix_(web_framework)) extends that determinism into the structure of web applications. By treating each HTTP request as an isolated transaction and processing it through a predictable, linear Plug pipeline, [Phoenix](https://en.wikipedia.org/wiki/Phoenix_(web_framework)) ensures that state does not leak between requests and that behavior remains consistent under concurrent load. Controllers operate on immutable connection data, and side effects—such as rendering or redirection—are explicit, traceable outcomes of [pure functions]((https://en.wikipedia.org/wiki/Pure_function)). This strict separation of concerns, combined with enforced statelessness in routing and data handling, means that determinism is a structural guarantee, rather than an architectural goal.
