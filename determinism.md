@@ -102,7 +102,7 @@ In **[React](https://en.wikipedia.org/wiki/React_(software))**, UI components ar
 In **[Redux](https://en.wikipedia.org/wiki/Redux_(JavaScript_library))**, application state is saved in a central store. Formal getter and setter functions are provided to interact with the store. These formal functions automatically sever references and protect the centralized state so that if you were to write the SideEffectFn shown above into your code, the side effect would not apply to the state tree. This functional pattern enforces immutability by design, ensures predictability, eliminates unintended side effects, and makes state transitions explicit, traceable, and testable.
 
 ```text
-LAST_STATE => change(state) => NEW_STATE
+LAST_STATE_RENDER => change(state) => NEW_STATE_RENDER
 ```
 
 There are many powerful impacts that this has on our system. Using a browser extension, we can not only see the present state, view the history of state changes, or alter any aspect of the state. This makes tracing and debugging your front end easy and rational.
