@@ -4,7 +4,7 @@
 
 ---
 
-[masked man photo](https://github.com/macioa/IMMUTABLESTUFF/fp_revo.png)
+[masked man photo](https://github.com/Macioa/ImmutableStuff/blob/master/fp_revo_small.png)
 
 ---
 ### **What is determinism?**
