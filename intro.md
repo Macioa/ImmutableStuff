@@ -32,7 +32,7 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
 
 - **Foundations** for **scalable**, **resusable** code and scalable **architecture**
 
-- **Easy Customization** with **transparency** and Generation Logs - "Built to be forked". Generators primarily use easily-modified TS string-literals for code generation. Code generation include histories, making it easy to find which generators touched a file and in what order.
+- **Easy Customization** with **transparency** and Generation Logs - "Built to be forked". Generators primarily use easily-modified TS string-literals for code generation. Code generation include histories, making it easy to find which generators touched a file and in what order. Includes utility for quickly converting live-code to literal generators.
 
 - **MacOs Toolkit** - scripted installs for common, language-agnostic, dev tools, including:
 
