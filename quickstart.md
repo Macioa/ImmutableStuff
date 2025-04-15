@@ -72,6 +72,15 @@ function App() {
 export default App;
 ``` 
 
+### 6. Start server and launch app
+```
+IEx -S mix phx.server
+```
+and navigate to
+```
+http://localhost:4000/
+```
+
 ## Custom Immutable Build
 
 ## 1. Create a custom code base
