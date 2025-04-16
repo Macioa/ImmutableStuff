@@ -50,7 +50,8 @@ immutable -genfile my_entity
 immutable -gen .genfile_my_entity.ts
 ```
 
-### 4. Check and run migrations
+### 4. Check and run database migrations
+my_app_umbrella/apps/my_app/priv/repo/migrations
 ```
 mix ecto.migrate
 ```
@@ -72,7 +73,7 @@ function App() {
 export default App;
 ``` 
 
-### 6. Start server and launch app
+### 6. Start server with interactive shell and launch app
 ```
 IEx -S mix phx.server
 ```
