@@ -62,7 +62,7 @@ mix ecto.migrate
 import "./App.css";
 import { Provider } from "react-redux";
 import { MyAppStore } from "./store";
-import { MyEntityDemo } from '@components/frog/index';
+import { MyEntityDemo } from '@components/my_entity/index';
 
 function App() {
   return <Provider store={MyAppStore}>
