@@ -23,7 +23,7 @@ The Immutable Stack is generated with Phoenix's umbrella app generator. Code is 
 ## Notable front end folders:
 * **reusable components** - `my_app_umbrella/apps/my_app/lib/typescript/components` - Render components, Higher Order components
 * **reusable state** - `my_app_umbrella/apps/my_app/lib/typescript/state` - Types, Factories, State Reducers and Selectors
-* **request api** - `my_app_umbrella/apps/my_app/lib/typescript/components` - Requests
+* **request api** - `my_app_umbrella/apps/my_app/lib/typescript/requests` - Requests
 
 
 ## Notable front end files:
