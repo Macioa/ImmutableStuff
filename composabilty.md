@@ -8,7 +8,7 @@
 ---
 ## **What is composability in software?**
 
-[Software Composability](https://en.wikipedia.org/wiki/Composability) is the degree to which components of a software can be rearranged without additional process edits. There are a number of programming techniques across many different programming paradigms that can contribute to the composability of the software, but the most composable systems are usually [**stateless** and **deterministic**](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and adhere to strict principles of modularity like the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle), [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle), and [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection).
+[Software Composability](https://en.wikipedia.org/wiki/Composability) is the degree to which components of a software can be rearranged without additional process edits. There are a number of programming techniques across many different programming paradigms that can contribute to the composability of the software, but the most composable systems are usually [**stateless** and **deterministic**](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and adhere to strict principles of [modular design](https://en.wikipedia.org/wiki/Modular_design).
 
 ### Composability example
 ```elixir
