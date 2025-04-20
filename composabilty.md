@@ -52,7 +52,7 @@ Elixir is a functional programming language with built-in implicit pipelining so
   defp fibp(n, a, b) when n > 0, 
     do: fibp(n - 1, b, a + b)
 ```
-*Fibonacci Pattern in Elixir - [Pattern Matching](https://en.wikipedia.org/wiki/Pattern_matching), [guard clauses](https://hexdocs.pm/elixir/main/patterns-and-guards.html), and [Tail Call Optimization](https://en.wikipedia.org/wiki/Tail_call_optimization) allow us to break this sequence down into its most atomic level while maintaining O(1) spatial complexity.*
+*Fibonacci Pattern in Elixir - [Pattern Matching](https://en.wikipedia.org/wiki/Pattern_matching), [guard clauses](https://hexdocs.pm/elixir/main/patterns-and-guards.html), and [Tail Call Optimization](https://en.wikipedia.org/wiki/Tail_call_optimization) allow us to break this sequence down into its most atomic level while maintaining O(1) [spatial complexity](https://en.wikipedia.org/wiki/Space_complexity).*
 
 ## Composability in React / Redux
 
