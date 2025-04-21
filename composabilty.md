@@ -29,7 +29,7 @@ users = User
 
 I don't know of any language or framework that offers guaranteed high composability out of the box. Nearly all development tooling makes some attempt to achieve this type of system. The systems that rank the highest in this regard tend to combine system tooling with idioms or guidelines. 
 
-Most techniques for highly composable systems center heavily on building small, focused, atomic units. This is a recurring concept in many forms of system design. In software, author [Bob Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) has coined this as the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle). It is also commonly referred to as [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). By isolating or [decoupling](https://en.wikipedia.org/wiki/Loose_coupling) the unique tasks a function performs, we improve its [apparent determinism](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and reduce the likelihood of [side-effects](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>). As a bonus, with the right design patterns, we can gain composability — we make it easy to rearrange or recompose software at both microscopic and macroscopic levels.
+Most techniques for highly composable systems center heavily on building small, focused, atomic units. This is a recurring concept in many forms of system design. In software, author [Bob Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) has coined this as the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle). It is also commonly referred to as [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). By isolating or [decoupling](https://en.wikipedia.org/wiki/Loose_coupling) the unique tasks a function performs, we improve its [apparent determinism](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and reduce the likelihood of [side-effects](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>). As a bonus, with the right design patterns, we can gain composability — we make it easy to rearrange at both microscopic and macroscopic levels.
 
 Computer Scientist, [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov), provides a formal method to validate this "[behavioral correctness](https://en.wikipedia.org/wiki/Behavioral_subtyping)" with the [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle). In short, we design subtypes so they can fully replace their parent types without altering the program’s "correct" behavior.
 
@@ -56,7 +56,7 @@ Elixir is a functional programming language with built-in implicit pipelining so
 
 ## Composability in React / Redux
 
-Like most UI development frameworks, React offers a reusable component system that offers some degree of composability out of the box. It has functional paradigms that allow the creation of deterministic render components.
+Like most UI development frameworks, React offers a reusable component system that offers some degree of composability out of the box. It has functional paradigms that allow the creation of [deterministic render components](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md), a key ingredient for our composable front end.
 ```tsx
 function UserRender({ name, email }: User {
   return (
@@ -69,7 +69,7 @@ function UserRender({ name, email }: User {
 ```
 *Example Render Component in React. We [deconstruct](https://en.wikipedia.org/wiki/Assignment_(computer_science)) the name and email properties from a user and provide an HTML definition for them*
 
-Redux substantially increases the composability of React, particularly when used with [Higher Order](https://en.wikipedia.org/wiki/Higher-order_function) / Render patterns. When designed in this manner our front-end architecture starts to mirror our back-end MVC pattern:
+Redux substantially increases the composability of React, particularly when used with [Higher Order](https://en.wikipedia.org/wiki/Higher-order_function) / Render patterns. When designed in this manner our front-end architecture starts to mirror our back-end [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern:
 ```
         FRONT                    BACK
 Higher Order Component         Controller
