@@ -3,8 +3,8 @@
 ## Setup
 
 ### PreReqs
-MacOs
-hardware virtualization - (docker only)
+* MacOs
+* hardware virtualization - (docker only)
 
 ### Install
 
