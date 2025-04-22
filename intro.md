@@ -34,13 +34,13 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
 
 - **Easy Customization** with **transparency** and Generation Logs - "Built to be forked". Generators primarily use easily-modified TS string-literals for code generation. Code generation include histories, making it easy to find which generators touched a file and in what order. Includes utility for quickly converting live-code to literal generators.
 
-- **MacOs Toolkit** - scripted installs for common, language-agnostic, dev tools, including:
+- **MacOs Toolkit** - automated installs for common, language-agnostic dev tools, including:
 
-  - **asdf** - A universal language version handler.
-  - **VSCODE** - A lightweight, language agnostic code editor
-  - **Docker** - A virtual machine service
-  - **Postman** - Deploy, save, manage, and share network requests
-  - **DBeaver** - A db-agnostic database utility
+  - **[asdf](https://asdf-vm.com/)** - A universal language version handler.
+  - **[VSCODE](https://code.visualstudio.com/)** - A lightweight, language agnostic code editor
+  - **[Docker](https://www.docker.com/)** - A virtual machine service
+  - **[Postman](https://www.postman.com/)** - Deploy, save, manage, and share network requests
+  - **[DBeaver](https://dbeaver.io/)** - A db-agnostic database utility
 
 ## Explainers
 * [Determinism in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md)
@@ -50,3 +50,4 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
 * [Quick Start](https://github.com/Macioa/ImmutableStuff/blob/master/quickstart.md)
 * [Dataflow in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/dataflow.md)
 * [File Structure in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/filestructure.md)
+* [Architecture in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/architecture.md)
