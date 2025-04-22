@@ -3,7 +3,7 @@
 
 ---
 
-![masked man photo](https://raw.githubusercontent.com/Macioa/MinCurryPipe/main/_logo_adjusted.png)
+![software composer image](https://raw.githubusercontent.com/Macioa/MinCurryPipe/main/_logo_adjusted.png)
 
 ---
 ## **What is composability in software?**

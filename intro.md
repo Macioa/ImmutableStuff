@@ -1,8 +1,8 @@
 # `    Immutable Stack    `
 
-## [`    Elixir/Phoenix    ->    Typescript/React/Redux    `] 
+![software composer image](https://raw.githubusercontent.com/Macioa/MinCurryPipe/main/_logo_adjusted.png)
 
-![hot programming pic here](TODO)
+## [`    Elixir/Phoenix    ->    Typescript/React/Redux    `] 
 
 The Immutable Stack provides comprehensive tooling for creating applications with Elixir/Phoenix and React/Redux including:
 
