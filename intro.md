@@ -51,3 +51,7 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
 * [Dataflow in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/dataflow.md)
 * [File Structure in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/filestructure.md)
 * [Architecture in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/architecture.md)
+
+## Other
+* [Source](https://github.com/Macioa/ImmutableStack)
+* [Homebrew](https://github.com/Macioa/homebrew-immutable)
