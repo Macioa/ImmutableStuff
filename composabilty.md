@@ -8,7 +8,7 @@
 ---
 ## **What is composability in software?**
 
-[Software Composability](https://en.wikipedia.org/wiki/Composability) is the degree to which components of a software can be rearranged without additional process edits. There are a number of programming techniques across many different programming paradigms that can contribute to the composability of the software, but the most composable systems are usually [**stateless** and **deterministic**](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and adhere to strict principles of [modular design](https://en.wikipedia.org/wiki/Modular_design).
+[Software Composability](https://en.wikipedia.org/wiki/Composability) is the degree to which components of a software can be rearranged without additional process edits. There are a number of programming techniques across many different programming paradigms that can contribute to the composability of the software, but the most composable systems are usually [**stateless** and **deterministic**](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md) and adhere to strict principles of [modular design](https://en.wikipedia.org/wiki/Modular_design).
 
 ### Composability example
 ```elixir
@@ -29,7 +29,7 @@ users = User
 
 I don't know of any language or framework that offers guaranteed high composability out of the box. Nearly all development tooling makes some attempt to achieve this type of system. The systems that rank the highest in this regard tend to combine system tooling with idioms or guidelines. 
 
-Most techniques for highly composable systems center heavily on building small, focused, atomic units. This is a recurring concept in many forms of system design. In software, author [Bob Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) has coined this as the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle). It is also commonly referred to as [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). By isolating or [decoupling](https://en.wikipedia.org/wiki/Loose_coupling) the unique tasks a function performs, we improve its [apparent determinism](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md) and reduce the likelihood of [side-effects](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>). As a bonus, with the right design patterns, we can gain composability — we make it easy to rearrange at both microscopic and macroscopic levels.
+Most techniques for highly composable systems center heavily on building small, focused, atomic units. This is a recurring concept in many forms of system design. In software, author [Bob Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) has coined this as the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle). It is also commonly referred to as [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). By isolating or [decoupling](https://en.wikipedia.org/wiki/Loose_coupling) the unique tasks a function performs, we improve its [apparent determinism](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md) and reduce the likelihood of [side-effects](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>). As a bonus, with the right design patterns, we can gain composability — we make it easy to rearrange at both microscopic and macroscopic levels.
 
 Computer Scientist, [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov), provides a formal method to validate this "[behavioral correctness](https://en.wikipedia.org/wiki/Behavioral_subtyping)" with the [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle). In short, we design subtypes so they can fully replace their parent types without altering the program’s "correct" behavior.
 
@@ -56,7 +56,7 @@ Elixir is a functional programming language with built-in implicit pipelining so
 
 ## Composability in React / Redux
 
-Like most UI development frameworks, React offers a reusable component system that offers some degree of composability out of the box. It has functional paradigms that allow the creation of [deterministic render components](https://github.com/Macioa/ImmutableStuff/blob/main/determinism.md), a key ingredient for our composable front end.
+Like most UI development frameworks, React offers a reusable component system that offers some degree of composability out of the box. It has functional paradigms that allow the creation of [deterministic render components](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md), a key ingredient for our composable front end.
 ```tsx
 function UserRender({ name, email }: User {
   return (
