@@ -13,11 +13,11 @@ Elixir Phoenix provides extensive out-of-the-box tooling for back-end systems. W
 
 This, coupled with Elixir's strong language paradigms, make Phoenix a great choice for both IOT and distributed back ends, providing a simple path from a monolithic back end to a distributed system.
 
-For example, I can create a worker queue that runs on my http server. When the worker queue starts pulling to many resources from the server, I can make a slight change to my configuration and split the queue to a dedicated server. If the queue outgrows this server, I can cluster the queue or migrate the task to a cloud worker. The ease to which I can do so is determined by [how I made the worker itself](https://github.com/Macioa/ImmutableStuff/blob/master/composabilty.md).
+For example, I can create a worker queue that runs on my http server. When the worker queue starts pulling too many resources from the server, I can make a slight change to my configuration and split the queue to a dedicated server. If the queue outgrows this server, I can cluster the queue or migrate the task to a cloud worker. The ease with which I can do so is determined by [how I made the worker itself](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md).
 
 ### Front end
 
-By default Immutable Stack uses React for a web-centric interface, but the same interface can be extended to mobile using [React Native](https://reactnative.dev/) or desktop using an embedded broswer like [chromium](https://www.chromium.org/). At present, the Immutable Stack does not provide automated extensions to these frameworks.
+By default Immutable Stack uses React for a web-centric interface, but the same interface can be extended to mobile using [React Native](https://reactnative.dev/) or desktop using an embedded browser like [chromium](https://www.chromium.org/). At present, the Immutable Stack does not provide automated extensions to these frameworks.
 
 The browser-driven front end makes distribution easy across environments and provides a strong security layer for front-ends.
 
@@ -27,4 +27,4 @@ The browser-driven front end makes distribution easy across environments and pro
 
 ## See also
 * [Dataflow in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/dataflow.md)
-* [Composability in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/composabilty.md)
+* [Composability in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md)

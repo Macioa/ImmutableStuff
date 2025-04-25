@@ -1,4 +1,5 @@
 # `    Immutable Stack    `
+### `    Pre-Alpha           `
 
 ![software composer image](https://raw.githubusercontent.com/Macioa/MinCurryPipe/main/_logo_adjusted.png)
 
@@ -11,7 +12,7 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
   - mix compile (compiles front and back end)
   - mix phx.server (In -dev-, starts vite with hot-reload and serves static files from phoenix endpoint)
 
-- **-Entity Driven Code Generation-**    Code generation through control files provide 'instant gen' or highly customized code generations. Fine tune entity attributes, appstate, and more. Toggle crud routes and apis with `cmd + /`. Add new routes and apis to generate boiler and vibe. 
+- **-Entity Driven Code Generation-**    Code generation through control files provide 'instant gen' or highly customized code generations. Fine tune entity attributes, appstate, and more. Toggle crud routes and apis with `cmd + /`. Add new routes and apis to generate boiler. 
   
   - Customizable (Ex : Ts) type-mapping
 
@@ -44,7 +45,7 @@ The Immutable Stack provides comprehensive tooling for creating applications wit
 
 ## Explainers
 * [Determinism in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md)
-* [Composability in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/composabilty.md)
+* [Composability in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md)
 
 ## Documentation
 * [Quick Start](https://github.com/Macioa/ImmutableStuff/blob/master/quickstart.md)

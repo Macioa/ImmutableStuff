@@ -1,7 +1,7 @@
 # Dataflow
 ## (in Immutable Stack)
 
-Dataflow in the ImmutableStack centers around principles of [determinism](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md) and [composibility](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md).  
+Dataflow in the ImmutableStack centers around principles of [determinism](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md) and [composability](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md).  
 
 The two primary mechanisms for data transfer in a basic Immutable application are:
 <br>
@@ -19,7 +19,7 @@ The two primary mechanisms for data transfer in a basic Immutable application ar
 ## Back End (Elixir / Phoenix)
 
 Data flow in Phoenix follows a standard MVCC pattern:
-* Model - Ecto Schema for data definitios, life cycles, and validations
+* Model - Ecto Schema for data definitions, life cycles, and validations
 * View - JSON Handler for standardized responses
 * Context - internal API layer
 * Controller - Controller or Channel
@@ -53,4 +53,4 @@ Render Component
 ```
 
 ## Channels
-Phoenix channels provide two way communication between the server and client. The client subscribes to a topic, like "chat#17" or "lobby", Then both the client and the server can broadcast messages in the topic or send direct client<=>server messages. Channels have the capacity to hold 'channel state' and share this state with connected nodes, although doing so can limit the scalability of the system. Channels also have built in clustering capabilities providing easy scalability for small to mid-range projects. These features make Phoenix Channels a popular choice for live data feeds.
+Phoenix channels provide two way communication between the server and client. The client subscribes to a topic, like "chat#17" or "lobby", Then both the client and the server can broadcast messages in the topic or send direct client<=>server messages. Channels have the capacity to hold 'channel state' and share this state with connected nodes, although doing so can limit the scalability of the system. Channels also have built-in clustering capabilities providing easy scalability for small to mid-range projects. These features make Phoenix Channels a popular choice for live data feeds.

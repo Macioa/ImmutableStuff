@@ -10,20 +10,20 @@ The Immutable Stack is generated with Phoenix's umbrella app generator. Code is 
 ## Notable back end folders:
 * **database migrations** - `my_app_umbrella/apps/my_app/priv/repo/migrations` - Table definitions
 * **schemas** - `my_app_umbrella/apps/my_app/lib/my_app` - Model definitions
-* **context apis** - `my_app_umbrella/apps/my_app/lib` - Domain Entity APIS
+* **context APIs** - `my_app_umbrella/apps/my_app/lib` - Domain Entity APIS
 
 ## Notable back end files:
-* **Mix.Exs** - `my_app_umbrella/mix.exs` - Phoenix project definition, deps, and compilation (similar to package.json) 
+* **Mix.exs** - `my_app_umbrella/mix.exs` - Phoenix project definition, deps, and compilation (similar to package.json) 
 * **Application.ex**
   - `my_app_umbrella/apps/my_app/lib/my_app/application.ex` - Startup and supervision tree for library
-  - `my_app_umbrella/apps/my_app_web/lib/my_app_web/application.ex` - Startup and supervision tree for webapp
-* **Endpoint.Exs** - `my_app_umbrella/apps/my_app_web/lib/my_app_web/endpoint.ex` - Server connection handling
+  - `my_app_umbrella/apps/my_app_web/lib/my_app_web/application.ex` - Startup and supervision tree for web app
+* **Endpoint.exs** - `my_app_umbrella/apps/my_app_web/lib/my_app_web/endpoint.ex` - Server connection handling
 * **Router.ex** - `my_app_umbrella/apps/my_app_web/lib/my_app_web/router.ex` - Server request routing
 
 ## Notable front end folders:
-* **reusable components** - `my_app_umbrella/apps/my_app/lib/typescript/components` - Render components, Higher Order components
+* **reusable components** - `my_app_umbrella/apps/my_app/lib/typescript/components` - Render Components, Higher-Order Components
 * **reusable state** - `my_app_umbrella/apps/my_app/lib/typescript/state` - Types, Factories, State Reducers and Selectors
-* **request api** - `my_app_umbrella/apps/my_app/lib/typescript/requests` - Requests
+* **request API** - `my_app_umbrella/apps/my_app/lib/typescript/requests` - Requests
 
 
 ## Notable front end files:
