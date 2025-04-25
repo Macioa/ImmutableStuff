@@ -4,7 +4,7 @@
 
 ---
 
-![masked man photo](https://raw.githubusercontent.com/Macioa/ImmutableStuff/master/fp_revo_smallest.png)
+![dice photo](https://raw.githubusercontent.com/Macioa/ImmutableStuff/master/dice_small.png)
 
 ---
 ## **What is determinism?**
@@ -42,10 +42,6 @@ LAST_STATE => change(state) => NEW_STATE
 *Is your software deterministic or is it a roll of the dice? How sure are you? Can you **prove** it?* 
 
 HINT – This cannot be proven with unit tests. Unit tests can prove that a specific input will provide a specific output under specific circumstances, but unless you want to provide a unit test for every possible input in all possible conditions, a proof by "**transitive**" properties is required. This type of proof can only be rationally applied to **deterministic** systems.
-
-*Have you put non-deterministic processes into production? Are your coworkers putting non-deterministic processes into production as you read this? Are you willing to hunt them down and burn them at the stake?*  
-
-If so, please apply for a lead position.
 
 ---
 
