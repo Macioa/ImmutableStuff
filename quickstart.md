@@ -9,6 +9,8 @@
 ### Install
 
 ```
+brew untap macioa/immutable ; \
+brew tap macioa/immutable && \
 brew install immutable
 ```
 
