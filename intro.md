@@ -176,8 +176,9 @@ const Immutable: ImmutableGenerator = {
 * [Determinism in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/determinism.md)
 * [Composability in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/composability.md)
 
-## Documentation
-* [Quick Start](https://github.com/Macioa/ImmutableStuff/blob/master/quickstart.md)
+## Documentation* 
+* [Quickest Start (Docker)](https://github.com/Macioa/ImmutableStuff/blob/master/quickeststart.md)
+* [Quick Start (local dev)](https://github.com/Macioa/ImmutableStuff/blob/master/quickstart.md)
 * [Dataflow in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/dataflow.md)
 * [File Structure in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/filestructure.md)
 * [Architecture in ImmutableStack](https://github.com/Macioa/ImmutableStuff/blob/master/architecture.md)
