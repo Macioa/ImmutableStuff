@@ -4,7 +4,6 @@
 
 ### PreReqs
 * MacOs
-* hardware virtualization - (docker only)
 
 ### Install
 
